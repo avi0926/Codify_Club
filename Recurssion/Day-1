@@ -1,0 +1,87 @@
+03-10-2023
+Print Decreasing
+----------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        printDecreasing(n);
+    }
+
+    public static void printDecreasing(int n){
+        if(n == 0){
+            return;
+        }
+        System.out.println(n);
+        printDecreasing(n-1);
+    }
+}
+
+Q- Print Increasing
+------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        printIncreasing(n);
+    }
+
+    public static void printIncreasing(int n){
+        if(n == 0){
+            return 0;
+        }
+        printIncreasing(n-1);
+        System.out.println(n);
+    }
+}
+
+Q- Print pid
+------------------------
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        pdi(n);
+    }
+
+    public static void pdi(int n){
+        if(n == 0){
+            return;
+        }
+        System.out.println(n);
+        pdi(n-1);
+        System.out.println(n);
+    }
+
+}
+
+Q- Print factorial
+------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int ans = factorial(n);
+        System.out.println(ans);
+    }
+    public static int factorial(int n){
+        if(n == 0){
+            return 1;
+        }
+        int res = n * factorial(n-1);        
+        return res;
+    }
+}
