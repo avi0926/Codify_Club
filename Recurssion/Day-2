@@ -1,0 +1,54 @@
+Q-Power-linear
+------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int n = sc.nextInt();
+        
+        int ans = power(x, n);
+        System.out.println(ans);
+    }
+
+    public static int power(int x, int n){
+        if(n == 1){
+            return x;
+        }
+        int res = x * power(x, n-1);
+        return res;
+    }
+}
+
+Q-Power-logarithmic
+------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int n = sc.nextInt();
+        
+        int ans = power(x, n);
+        System.out.println(ans);
+    }
+
+    public static int power(int x, int n){
+        if(n == 1){
+            return x;
+        }
+        int pow = power(x, n/2);
+        int pw = pow * pow;
+        
+        if(n%2 != 0){
+            return x * pw;
+        }
+        return pw;
+    }
+}
