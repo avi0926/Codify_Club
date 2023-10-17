@@ -1,0 +1,44 @@
+Q-Get Stair Paths
+----------------------------
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<String> res = getStairPaths(n);
+        System.out.println(res);
+    }
+
+    public static ArrayList<String> getStairPaths(int n) {
+        if(n < 0){
+            ArrayList<String> base = new ArrayList<>();
+            return base;
+        }
+        if(n == 0){
+            ArrayList<String> base = new ArrayList<>();
+            base.add("");
+            return base;
+        }
+        
+        ArrayList<String> path1 = getStairPaths(n-1);
+        ArrayList<String> path2 = getStairPaths(n-2);
+        ArrayList<String> path3 = getStairPaths(n-3);
+        
+        ArrayList<String> paths = new ArrayList<String>();
+        
+        for(String path : path1){
+            paths.add(path+1);
+        }        
+        for(String path : path2){
+            paths.add(path+2);
+        }
+        for(String path : path3){
+            paths.add(path+3);
+        }        
+        return paths;
+    }
+
+}
