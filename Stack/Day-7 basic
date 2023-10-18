@@ -1,0 +1,30 @@
+//Basic implementation
+----------------------------------
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Stack<Integer> st = new Stack<>();
+		
+		// add, pop, peek,
+
+    st.push(0) //adding
+		st.add(1); //adding
+		st.add(2);
+		st.add(3);
+		st.add(4);
+		st.add(5);
+		st.add(6);
+		
+		System.out.println(st);
+		System.out.println("Pop " + st.pop());
+		System.out.println(st);
+		System.out.println("Peek " + st.peek());
+		System.out.println(st);
+		System.out.println("Size " + st.size());
+		System.out.println("Removing by their index " + st.remove(2));
+		System.out.println(st);
+	}
+}
