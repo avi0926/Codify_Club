@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+        int[] arr = {1,2,3,4,3,6,8,1,10,11,10,100,99,3,100,9};
+        
+        HashMap<Integer, Integer> hmap = new HashMap<>();
+        
+        for(int i =0; i<arr.length; i++){
+            int num = arr[i];
+            if(hmap.containsKey(num)){
+                hmap.put(num, hmap.get(num) + 1);
+            }else{
+                hmap.put(num, 1);
+            }
+        }
+        
+        for(Integer val : hmap.keySet()){
+            if(hmap.get(val) >= 2){
+                System.out.println(val);
+            }
+        }
+	}
+}
