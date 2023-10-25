@@ -1,0 +1,24 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Queue<Integer> queue = new ArrayDeque<Integer>();
+		
+		queue.add(5); //adding
+		queue.add(4);
+		queue.add(3);
+		queue.add(2);
+		queue.add(1);
+		
+		System.out.println(queue);
+		System.out.println(queue.peek()); //peek
+		System.out.println(queue.poll()); //pop
+		System.out.println(queue);
+		System.out.println(queue.size()); //size
+		System.out.println(queue.remove(2)); //return true if value exist and false if value does not exist
+		System.out.println(queue);
+		System.out.println(queue.size());
+	}
+}
