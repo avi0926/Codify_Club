@@ -1,0 +1,34 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+// 		HashMap<Integer, String> hmap = new HashMap<>();
+		
+		//Key , Value
+		//Key - > Unique
+		//Value - > Not Unique
+// 		hmap.put(1, "A");
+// 		hmap.put(2, "B");
+// 		hmap.put(3, "C");
+// 		hmap.put(4, "A");
+// 		hmap.put(4, "E");
+// 		System.out.println(hmap.containsKey(1)); 
+// 		System.out.println(hmap.size());
+// 		System.out.println(hmap.keySet());
+		
+		HashMap<Integer, Integer> hmap = new HashMap<>();
+		
+		hmap.put(1,10);
+		hmap.put(2,11);
+		hmap.put(3,12);
+		hmap.put(4,13);
+		hmap.put(5,14);
+
+		System.out.println(hmap.get(5)); //Value
+		
+		hmap.put(3, hmap.get(3) + 5);
+		System.out.println(hmap);
+	}
+}
