@@ -1,0 +1,119 @@
+Q-Highest Frequency Character
+----------------------------------------
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+  public static void main(String[]args)
+  {
+      Scanner sc = new Scanner(System.in);
+      String str = sc.nextLine();
+      HashMap<Character , Integer> hmp = new HashMap<>();
+      
+      for(int i = 0; i< str.length(); i++)
+      {
+        char key = str.charAt(i);
+        if(hmp.containsKey(key))
+        {
+           int num = hmp.get(key);
+           int sum =  num + 1;
+           hmp.put(key, sum);
+        }
+        else
+        {
+            hmp.put(key,1);
+        }
+      }
+      
+      int max = Integer.MIN_VALUE;
+      char ch1 = '\0';
+      
+      for(char ch : hmp.keySet())
+      {
+        int n = hmp.get(ch);
+        
+        if(n > max){
+            max = n;
+            ch1 = ch;
+        }
+      }
+    System.out.println(ch1);
+  }
+}
+
+Q- Get Common Elements - 1
+--------------------------------------
+import java.util.*;
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int[] arr1 = new int[n1];
+        for(int i=0; i<arr1.length; i++){
+            arr1[i] = sc.nextInt();
+        }
+        
+        int n2 = sc.nextInt();
+        int[] arr2 = new int[n2];
+        for(int i=0; i<arr2.length; i++){
+            arr2[i] = sc.nextInt();
+        }
+        
+        getCommonElement(arr1, arr2);
+    }
+    
+    public static void getCommonElement(int[] arr1, int[] arr2){
+        HashMap<Integer, Integer> hmapArr1 = createHashMapforArr1(arr1);
+
+        for(Integer val : arr2){
+            if(hmapArr1.containsKey(val)){
+                System.out.print(val + " ");
+                hmapArr1.remove(val);
+            }
+        }
+    }
+    
+    public static HashMap<Integer, Integer> createHashMapforArr1(int[] arr){
+        HashMap<Integer, Integer> hmap = new HashMap<>();
+        for(int i=0; i<arr.length; i++){
+            int num = arr[i];
+            hmap.put(num, 1);
+        }
+        
+        return hmap;
+    }
+}
+
+
+// 9
+// 5
+// 5
+// 9
+// 8
+// 5
+// 5
+// 8
+// 0
+// 3
+// 18
+// 9
+// 7
+// 1
+// 0
+// 3
+// 6
+// 5
+// 9
+// 1
+// 1
+// 8
+// 0
+// 2
+// 4
+// 2
+// 9
+// 1
+// 5
